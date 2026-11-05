@@ -1,0 +1,153 @@
+.flexbox-animation {
+    display: flex;
+    align-items: flex-end;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, white, #d565e9);
+    position: relative;
+    overflow: hidden;
+}
+
+.man {
+    position: relative;
+    width: 96px;
+    height: 180px;
+    margin-bottom: 10px;
+}
+
+.man-body {
+    height: 180px;
+    position: absolute;
+}
+
+.man-head {
+    position: absolute;
+    height: 37px;
+    top: 3px;
+    left: 35px;
+    transform-origin: bottom;
+}
+
+.man:hover .man-head {
+    animation: shake 0.5s infinite alternate;
+}
+
+@keyframes shake {
+    from {
+        transform: rotate(-10deg);
+    }
+
+    to {
+        transform: rotate(10deg);
+    }
+}
+
+.kto {
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    margin: 0;
+    font-size: 20px;
+}
+
+.flexbox-animation:hover .kto {
+    display: block;
+}
+
+.frog {
+    position: absolute;
+    height: 60px;
+    right: 15px;
+    bottom: 15px;
+
+}
+
+.flexbox-animation:hover .frog {
+    display: block;
+    animation: frogAppear 2.5s;
+}
+
+@keyframes frogAppear {
+    from {
+        right: -65px;
+        bottom: 50px;
+    }
+
+    50% {
+        right: 5px;
+        bottom: -1px;
+    }
+
+    to {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+.flexbox-animation .frog:hover {
+    animation: frogAppear 2.5s,
+        frogJump 0.4s infinite alternate;
+}
+
+@keyframes frogJump {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-8px);
+    }
+}
+
+.princess {
+    position: absolute;
+    height: 145px;
+    right: 15px;
+    bottom: 15px;
+}
+
+.flexbox-animation:active .frog {
+    display: none;
+}
+
+.flexbox-animation:active .princess {
+    display: block;
+    animation: princessAppear 1s;
+}
+
+@keyframes princessAppear {
+    from {
+        height: 60px;
+        opacity: 0;
+    }
+
+    to {
+        height: 145px;
+        opacity: 1;
+    }
+}
+
+.flexbox-animation:active {
+    filter: sepia(1);
+}
+.princ {
+    position: absolute;
+    top: 5px;
+    left: 70px;
+    margin: 0;
+    font-size: 18px;
+}
+
+.flexbox-animation:active .kto {
+    display: none;
+}
+
+.flexbox-animation:active .princ {
+    display: block;
+}
+.frog,
+.princess,
+.kto,
+.princ {
+    display: none;
+}

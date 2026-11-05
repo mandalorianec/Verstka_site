@@ -1,0 +1,152 @@
+.test {
+    margin: 20px 0;
+    padding: 20px;
+    background: #eee;
+}
+
+.test * {
+    box-sizing: border-box;
+}
+
+.test__field {
+    display: flex;
+    gap: 20px;
+}
+
+.test__questions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 30%;
+}
+
+.test__answers {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+    min-height: 300px;
+    padding: 8px;
+    overflow: hidden;
+}
+
+.test__question,
+.test__answer {
+    padding: 15px;
+    border: 1px solid #aaa;
+    background: white;
+    color: #222;
+    font: inherit;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+    transition: transform 0.2s, padding 0.3s;
+}
+
+.test__question {
+    width: 100%;
+}
+
+.test__answer {
+    flex: 1;
+    min-width: 0;
+}
+
+.test__question:not(:disabled):hover,
+.test__answer:not(:disabled):hover {
+    transform: scale(1.03);
+}
+
+.test__question:disabled,
+.test__answer:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.test__answer_correct {
+    padding: 25px 15px;
+    background: #dfd;
+}
+
+.test__answer_wrong {
+    background: #fdd;
+}
+
+.test__info {
+    display: block;
+    margin-top: 10px;
+}
+
+.test__mark {
+    margin-left: 10px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.test__mark_correct {
+    color: green;
+}
+
+.test__mark_wrong {
+    color: red;
+}
+
+.test__review {
+    width: 100%;
+    padding: 15px;
+    background: white;
+}
+
+.test__question_shake,
+.test__answer_shake {
+    animation: tryaska 0.35s;
+}
+
+.test__answer_away {
+    animation: vniz 0.55s forwards;
+}
+
+@keyframes tryaska {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    25%, 75% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes vniz {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(250px);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .test__field {
+        flex-direction: column;
+    }
+
+    .test__questions,
+    .test__answers {
+        width: 100%;
+    }
+
+    .test__answers {
+        flex-wrap: wrap;
+    }
+
+    .test__answer {
+        flex: 1 1 40%;
+    }
+}

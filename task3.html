@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Тест – Новый Оскол</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/test.css">
+    <script src="js/menu.js" defer></script>
+    <script src="js/test.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <a class="header__brand" href="index.html">
+                <span class="logo" aria-hidden="true">
+                    НО
+                    <span class="logo__wave"></span>
+                </span>
+                <span>Новый Оскол</span>
+            </a>
+            <button class="header__toggle" type="button" aria-controls="main-menu" aria-expanded="false">Меню</button>
+            <nav class="header__menu" id="main-menu" aria-label="Основное меню">
+                <a class="header__link" href="index.html">Главная</a>
+                <a class="header__link" href="task1.html">Динозавр</a>
+                <a class="header__link" href="task2.html">Принц</a>
+                <a class="header__link header__link--current" href="task3.html" aria-current="page">Тест</a>
+                <a class="header__link" href="kurs.html">Курсовая</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container page">
+        <div class="page__heading">
+            <p class="page__label">Учебное задание 03</p>
+            <h1 class="page__title">Тест</h1>
+        </div>
+        <div class="assignment assignment--test">
+        <section id="test" class="test">
+            <h2>Тест «Ругательства»</h2>
+
+            <p id="message">Выберите вопрос, затем один ответ.</p>
+            <p id="result"></p>
+
+            <h3>Вопросы</h3>
+
+            <div class="test__field">
+                <div id="questions" class="test__questions"></div>
+                <div id="answers" class="test__answers"></div>
+            </div>
+        </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">Не является ООО, АО и тд. Учебный проект, посвященный истории Новооскольского района Белгородской области</p>
+        </div>
+    </footer>
+</body>
+</html>
